@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from escola.models import ALuno
+from escola.serializer import ALunoSerializer
 
-# Create your views here.
+class AlunosViewSet(viewsets.ModelViewSet):
+    queryset = ALuno.objects.all()
+    serializer_class = ALunoSerializer
